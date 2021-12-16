@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-4#%my)ef#((@iq*#4qtljxo=evbe6diy2955*3f8#5sq@o!^w*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['saveyourlink.herokuapp.com']
+ALLOWED_HOSTS = ['saveyourlink.herokuapp.com', '*']
 
 
 # Application definition
@@ -45,7 +45,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    
+
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -54,8 +54,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware', #see link 162 and 163
-    
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',  # see link 162 and 163
+
 ]
 
 ROOT_URLCONF = 'urltree.urls'
@@ -136,7 +136,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 STATICFILES_DIRS = [
-   os.path.join(BASE_DIR, 'staticfiles')
+    os.path.join(BASE_DIR, 'staticfiles')
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
@@ -154,6 +154,6 @@ LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'dashboard'
 
 
-X_FRAME_OPTIONS = 'SAMEORIGIN' #see link 162 and 163
-#https://docs.djangoproject.com/en/3.0/ref/clickjacking/#setting-x-frame-options-for-all-responses
-#https://stackoverflow.com/questions/12639570/is-it-possible-to-use-iframe-with-localhost-address-in-source/27535039
+X_FRAME_OPTIONS = 'SAMEORIGIN'  # see link 162 and 163
+# https://docs.djangoproject.com/en/3.0/ref/clickjacking/#setting-x-frame-options-for-all-responses
+# https://stackoverflow.com/questions/12639570/is-it-possible-to-use-iframe-with-localhost-address-in-source/27535039
